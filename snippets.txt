@@ -1,0 +1,35 @@
+.. automodule:: course.course
+   :members:
+
+.. automodule:: course.lab_course
+   :members:
+
+.. automodule:: course.lecture_course
+   :members:
+
+.. automodule:: department.department
+   :members:
+
+.. automodule:: student.student
+   :members:
+
+.. automodule:: student.council_decorator
+   :members:
+
+.. automodule:: student.student_decoratable
+   :members:
+
+.. automodule:: student.student_decorator
+   :members:
+
+.. automodule:: student.volunteer_decorator
+   :members:
+
+.. automodule:: patterns.singleton.singleton_student_manager
+   :members:
+
+.. automodule:: user_interface.grade_point_average_calculator
+   :members:
+
+.. automodule:: user_interface.student_listing
+   :members:
