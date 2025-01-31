@@ -23,6 +23,7 @@ class Student:
                 integer, the name contains no non-whitespace characters,
                 or the department is not a Department value.
         """
+
         if not isinstance(student_number, int):
             raise ValueError("Student Number must be a whole number.")
 
@@ -44,6 +45,7 @@ class Student:
         Returns:
             int: The unique id associated with the Student instance.
         """
+
         return self.__student_number
 
     @property
@@ -53,6 +55,7 @@ class Student:
         Returns:
             str: The name of the Student instance.
         """
+
         return self.__name
 
     @property
@@ -63,6 +66,7 @@ class Student:
             Department: A specific Department enum value associated with
                 the Student instance.
         """
+
         return self.__department
 
     @property
@@ -73,6 +77,7 @@ class Student:
             float: The grade point average value associated with the 
                 Student instance.
         """
+
         return self.__grade_point_average
 
 
@@ -82,6 +87,7 @@ class Student:
         Returns:
             str: A string representation of the Student instance.
         """
+        
         # Note: For departments containing more than one word
         # replace the _ with a blank.
         return (f"Student: {self.__student_number}"
