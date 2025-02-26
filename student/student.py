@@ -5,27 +5,24 @@ __version__ = "1.1.2025"
 
 import random
 from department.department import Department
+from patterns.singleton.singleton_student_manager import SingletonStudentManager
+from patterns.decorator.student_decoratable import StudentDecoratable
 
-class Student:
+class Student(StudentDecoratable):
     """Represents a student in a school."""
 
-    def __init__(self, student_number: int, name: str, department: Department):
+    def __init__(self, name: str, department: Department):
         """Initializes a new instance of the Student class.
 
         Args:
-            student_number (int): The student's unique id.
             name (str): The name of the student.
             department (Department): The name of the department in which
                 student is enrolled.
 
         Raises:
-            ValueError: Raised when the student_number is not an 
-                integer, the name contains no non-whitespace characters,
-                or the department is not a Department value.
+            ValueError: Raised when the name contains no non-whitespace 
+            characters, or the department is not a Department value.
         """
-
-        if not isinstance(student_number, int):
-            raise ValueError("Student Number must be a whole number.")
 
         if len(name.strip()) == 0:
             raise ValueError("Name cannot be blank.")
@@ -33,7 +30,7 @@ class Student:
         if not isinstance(department, Department):
             raise ValueError("Department must be one of the predefined Departments.")
 
-        self.__student_number = student_number
+        self.__student_number = SingletonStudentManager().get_next_student_number()
         self.__name = name
         self.__department = department
         self.__grade_point_average = random.uniform(0, 4.5)
